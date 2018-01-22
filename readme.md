@@ -1,4 +1,4 @@
-Intuit Quickbooks is a multi-tenant product and serves various regions across geographies. The product is also highly configurable, the configurations controlled via a myriad of properties.  And the properties being highly dynamic in nature, the system needs to be aware of the changes in properties and should react accordingly.  In this context, 
+ is a multi-tenant product and serves various regions across geographies. The product is also highly configurable, the configurations controlled via a myriad of properties.  And the properties being highly dynamic in nature, the system needs to be aware of the changes in properties and should react accordingly.  In this context, 
 
  Design and implement a basic config management system that quickbooks can use
 1.	For loading all startup properties (static ones)
@@ -26,6 +26,5 @@ To send message to client
 {"clientID":"mani1","key":"abc","mType":1}
 
 
-update client
-
+// update config 
 http://localhost:8091/notify/mani/kannamma
