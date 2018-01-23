@@ -27,4 +27,10 @@ To send message to client
 
 
 // update config 
-http://localhost:8091/notify/mani/kannamma
+http://localhost:8091/notify/kn/vn
+
+// To load config into central store
+http://localhost:8091/notify/k1/v1
+http://localhost:8091/notify/k2/v2
+http://localhost:8091/notify/k3/v3
+http://localhost:8091/notify/k4/v4

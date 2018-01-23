@@ -44,10 +44,10 @@ func (r *store) run() {
 		case client := <-r.unregister:
 			delete(r.clients, client)
 			close(client.configSend)
-		case msg := <-r.config:
+		case msg := <-r.config: // This channel is used only for all client communication and update central store
 			go func() {
 				r.cmap[msg.Key] = msg.Value // No need for lock, its in channel
-				for c := range r.clients {
+				for c := range r.clients {  // Iterate all clients and send config message to them
 					c.send <- msg
 				}
 			}()

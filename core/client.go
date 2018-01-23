@@ -98,7 +98,11 @@ func (c *Client) handleCRequest() {
 		for msg := range c.crequest {
 			fmt.Println("in handleCRequest ", msg)
 			m := ConfigInfo{Key: msg.Key, Value: c.st.cmap[msg.Key]}
-			c.configReceive <- &m
+			//c.configReceive <- &m // This is not needed
+			if err := c.socket.WriteJSON(m); err != nil {
+				c.connected = false
+				break
+			}
 		}
 	}
 	c.socket.Close()
